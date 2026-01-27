@@ -1,16 +1,21 @@
+"""Simple script to read Frankenstein and print its total word count."""
+
+
 def get_book_text(filepath: str) -> str:
     """Return the full text of the book at the given filepath."""
-    with open(filepath) as file:
+    with open(filepath, encoding="utf-8") as file:
         file_contents = file.read()
     return file_contents
 
 
-def count_words(contents):
+def count_words(contents: str) -> int:
+    """Return the number of whitespace-separated words in the given text."""
     words = contents.split()
     return len(words)
 
 
-def main():
+def main() -> None:
+    """Read the book, count its words, and print the total."""
     filepath = "books/frankenstein.txt"
     contents = get_book_text(filepath)
     num_words = count_words(contents)
