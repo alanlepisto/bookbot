@@ -1,6 +1,7 @@
 """Simple script to read Frankenstein and print its total word count."""
 
 from stats import count_words
+from stats import char_count
 
 
 def get_book_text(filepath: str) -> str:
@@ -16,6 +17,8 @@ def main() -> None:
     contents = get_book_text(filepath)
     num_words = count_words(contents)
     print(f"Found {num_words} total words")
+    num_char = char_count(contents)
+    print(num_char)
 
 
 main()
